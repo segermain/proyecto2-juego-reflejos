@@ -1,0 +1,12 @@
+Verificación sobre el assembler recibido.
+game.s coincide con game.hex: 111 palabras.
+lui x2, 0x80000 -> 80000137: OK
+addi x1, x0, 15 -> 00f00093: OK
+sw x1, 4(x2) -> 00112223: OK
+loop: jal x0, loop -> 0000006f: OK
+jalr x0, 0(x15) -> 00078067: OK
+addi x16, x0, 1: rechazado correctamente
+addi x1, x0, 2048: rechazado correctamente
+jal x0, ausente: rechazado correctamente
+a: nop / a: nop: rechazado correctamente
+slli x1, x1, 1: rechazado correctamente
